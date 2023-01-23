@@ -1,0 +1,15 @@
+
+<div class="container">    
+    <div class="card" *ngFor="let i of data"> 
+        <div class="imgBx">
+        <img src="../../assets/img_avatar.png"/>
+        </div>
+        <div class="content">
+        <div class="details">
+        <h2>{{ i.name }}</h2><span>{{ i.email }}</span><br>
+        <span class="example-flex-container">{{ i.phone }}</span><br>
+        <span class="example-flex-container">{{ i.company.name }}</span>
+        </div>
+        </div>
+    </div>
+    </div>
