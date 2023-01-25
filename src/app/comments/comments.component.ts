@@ -1,15 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppServices } from '../app.services';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-child',
-  templateUrl: './child.component.html',
-  styleUrls: ['./child.component.css'],
+  selector: 'app-comments',
+  templateUrl: './comments.component.html',
+  styleUrls: ['./comments.component.css']
 })
-export class ChildComponent {
-  // @Input() data!: any[];
-
+export class CommentsComponent {
   value: any;
   check : any= true ;
   childData: any;
@@ -18,18 +16,22 @@ export class ChildComponent {
     private appservices: AppServices
   ) {}
 
+  
+getW(){
+  console.log("getW entered")
+}  
 
   ngOnInit() {
     this.check = true
-    console.log("user init entered")
+    console.log("comment init entered")
     this.value = this.route.snapshot.params['foo'];
     console.log(this.value);
     if (this.value != '') {
-      this.appservices.fetchDataSer(Number(this.value)).subscribe((data) => {
+      this.appservices.fetchCommentData(Number(this.value)).subscribe((data) => {
         this.childData = data;
       });
     } else {
-      this.appservices.fetchDataSer().subscribe((data) => {
+      this.appservices.fetchCommentData().subscribe((data) => {
         this.childData = data;
       });
     }

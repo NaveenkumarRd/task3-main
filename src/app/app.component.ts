@@ -1,34 +1,28 @@
 import { Component } from '@angular/core';
-import { AppServices } from './app.services';
+import {ActivatedRoute, Router} from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private appServices: AppServices){}
-  title = 'task3';
+  title = 'task4';
   httpdata:any;
   value!: any ;
-  
-  getVal(val: any){
-    this.value = val;
-    if(this.value != ''){
-      this.appServices.fetchDataSer(Number(this.value)).subscribe((data: object)=>{
-        this.httpdata = data;})
+  currVal : any
+  constructor(private activatedRouter: ActivatedRoute, private router:Router){}
     
-      }
-      else{
-        this.appServices.fetchDataSer().subscribe((data: object)=>{
-          this.httpdata = data;})
-          
-      }
-      }
+  updateCurrVal(val:any){
+    this.currVal = val
+  }
+
   
-   ngOnInit(){
-    this.appServices.fetchDataSer(Number()).subscribe((data: object)=>{
-      this.httpdata = data;})
-      // console.log(this.httpdata);
-    
-  } 
+  navigate(){
+    this.router.navigate(['/']).then(()=>{
+      this.router.navigate(["/",this.currVal, {foo:this.value}])
+    })
+  }
+
+
 }

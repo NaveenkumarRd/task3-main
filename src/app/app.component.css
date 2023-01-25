@@ -1,22 +1,88 @@
 .navbar {
-    overflow: hidden;
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+ .navbar input {
+  float: left;
+  display: block; 
+  /* color: #f2f2f2; */
+  /* text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;*/
+  font-size: 17px;
+} 
+
+.navbar input:hover {
+  background: #ddd;
+  color: black;
+}
+
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  /* top: -10; */
+  left: 0;
+  background-color: transparent;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 46px 28px 36px 6px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #000000;
+  display: block;
+  text-align: center;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  /* font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+.navbar {
+  overflow: hidden;
+  /* background-color: #333; */
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+  align-items: center;
+  /* padding-left: 15%; */
+  color: black;
+  display: block;
+}
+ 
+ .navbar a{
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration:solid;
+  margin-bottom: 20px;
+  width: 100%;
+  overflow:visible;
+  font-size: 17px;
+} 
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
   }
-  
-  .navbar input {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  .sidenav a {
+    font-size: 18px;
   }
-  
-  .navbar input:hover {
-    background: #ddd;
-    color: black;
-  }  
+}

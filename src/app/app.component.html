@@ -1,2 +1,23 @@
-<input #box (keyup.enter)="getVal(box.value)"/>
-<app-child [data]="httpdata"></app-child>
+<div class="parent">
+  <div class="navbar">
+    <!-- <input #box (keyup.enter)="getVal(box.value)" /> -->
+    <input type="text" placeholder="enter id" [(ngModel)]="value">
+    <button class="submit" (click)="navigate()">Search</button>
+  </div>
+
+  <div class="sidenav">
+    <a [routerLink]="['/comments',{foo:value}]" (click)="updateCurrVal('comments')">Comments</a>
+    <a [routerLink]="['/child',{foo:value}]" (click)="updateCurrVal('users')">Users</a>
+    <a [routerLink]="['/photos',{foo:value}]" (click)="updateCurrVal('photos')">Photos</a>
+    <a [routerLink]="['/todos',{foo:value}]" (click)="updateCurrVal('todos')">Todos</a>
+    <a [routerLink]="['/post',{foo:value}]" (click)="updateCurrVal('post')">Posts</a>
+  </div>
+  
+
+
+
+  <div class="main">
+    <!-- <app-child [data]="httpdata"></app-child> -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

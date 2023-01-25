@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="card" *ngFor="let i of childData">
+      <div class="imgBx">
+        <img src="../../assets/img_avatar.png" />
+      </div>
+      <div class="content">
+        <div class="details">
+          <h2>{{ "User Id : "+i.userId }}</h2>
+          <span>{{ "Id : "+i.id }}</span
+          ><br />
+          <span class="example-flex-container">{{"Title : "+ i.title }}</span
+          ><br />
+          <span class="example-flex-container">{{"Completed :"  + i.completed }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
